@@ -292,7 +292,8 @@
          $("#match-img").attr("src", data.photo);
  
          // Show the modal with the best match
-         $("#results-modal").modal("toggle");
+         $("#results-modal").modal("show");
+         $("#submit").attr('disabled', 'disabled');
  
        });
      } else {
