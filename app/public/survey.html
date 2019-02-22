@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Survey Page</title>
+  <title>Survery Page</title>
 
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -14,188 +14,171 @@
 </head>
 
 <body>
-  <p data-toggle="modal" data-target="#myModal"></p>
-  <!-- The Modal -->
-  <div id="myModal" class="modal">
-    <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
 
-        <!-- Modal content-->
-        <!-- <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Best Match</h4>
-          </div>
-        </div> -->
-
-      </div>
-    </div>
-    <!-- Modal content -->
-    <div class="modal-content">
-      <!-- <button class="close">&times;</button>-->
-      <!--   <p id="matchName"></p>-->
-    </div>
-
-  </div>
   <div class="container">
-    <div class="jumbotron" style="background-color:midnightblue">
-      <h1 style="font-size:650%; color:white; background:royalblue;">
-        <img src="images/mickeyandminnie.jpg" alt="mice">
-        <span></span> Find Your Match</h1>
+
+    <div class="jumbotron">
+      <h1 class="text-center">
+        <span class="fa fa-fire"></span> Friend Finder </h1>
       <hr>
       <br>
+      <div class="text-center">
+        <a href="/tables">
+        </a>
+        <a href="/">
+        </a>
+      </div>
     </div>
     <div class="row">
+        <div class="col-lg-12">
+          <!-- Reservation Page -->
+          <div class="card">
+            <div class="card-header">
+              About You
+            </div>
+            <div class="card-body">
+                <form role="form">
+                  <div class="form-group">
+                    <strong><label for="reserve-name">Name (Required)</label></strong>
+                    <input type="text" id="name" class="form-control" required="">
+                  </div>
+                  <div class="form-group">
+                      <strong><label for="reserve-name">Photo (Required)</label></strong>
+                      <input type="text" id="photo" class="form-control" required="">
+                    </div>
+            </div>
+        </div>
+
+    <div class="row">
       <div class="col-lg-12">
-        <!-- Survey Page -->
+        <!-- Reservation Page -->
         <div class="card">
-          <div class="card-header" style="background:royalblue;">
-            <h3>Survey Questions - Answer All 10 Questions and Find Your Match</h3>
+          <div class="card-header">
+            Survery Questions
           </div>
           <div class="card-body">
             <form role="form">
               <div class="form-group">
-                <label for="user-name">Name (required)</label>
-                <input type="text" class="form-control" id="user-name" required autocomplete="on">
+                <strong><label for="reserve-name">Question 1:</label></strong><br>
+                <label for="reserve-name">Your mind is always buzzing with unexplored ideas and plans.</label>
+                <select class="form-control" id="q1">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                    </select>
               </div>
               <div class="form-group">
-                <label for="user-picture">Link for Picture (required)</label>
-                <input type="url" pattern="https?://.+" class="form-control" id="user-picture" required
-                  autocomplete="on">
-              </div>
-              <div class="form-group">
-                <h4>Question 1</h4>
-                <label for="q1">My ideal vacation is going to DisneyWorld</label>
-                <br>
-                <select required id="q1">
-                  <option value=" ">Select an option</option>
-                  <option value="5">5 Strongly Agree</option>
-                  <option value="4">4</option>
-                  <option value="3">3</option>
-                  <option value="2">2</option>
-                  <option value="1">1 Strongly Disagree</option>
-                </select>
-                <br><br>
-
-                <h4>Question 2</h4>
-                <label for="q2">I feel like a little kid when I visit DisneyWorld</label>
-                <br>
-                <select required id="q2">
-                  <option value=" ">Select an option</option>
-                  <option value="5">5 Strongly Agree</option>
-                  <option value="4">4</option>
-                  <option value="3">3</option>
-                  <option value="2">2</option>
-                  <option value="1">1 Strongly Disagree</option>
-                </select>
-                <br><br>
-
-                <h4>Question 3</h4>
-                <label for="q3">Spaceship Earth is my favorite attraction in Epcot</label>
-                <br>
-                <select required id="q3">
-                  <option value=" ">Select an option</option>
-                  <option value="5">5 Strongly Agree</option>
-                  <option value="4">4</option>
-                  <option value="3">3</option>
-                  <option value="2">2</option>
-                  <option value="1">1 Strongly Disagree</option>
-                </select>
-                <br><br>
-
-                <h4>Question 4</h4>
-                <label for="q4">Mickey Mouse is my favorite Disney character</label>
-                <br>
-                <select required id="q4">
-                  <option value=" ">Select an option</option>
-                  <option value="5">5 Strongly Agree</option>
-                  <option value="4">4</option>
-                  <option value="3">3</option>
-                  <option value="2">2</option>
-                  <option value="1">1 Strongly Disagree</option>
-                </select>
-                <br><br>
-
-                <h4>Question 5</h4>
-                <label for="q5">Disney after Hours is a must</label>
-                <br>
-                <select required id="q5">
-                  <option value=" ">Select an option</option>
-                  <option value="5">5 Strongly Agree</option>
-                  <option value="4">4</option>
-                  <option value="3">3</option>
-                  <option value="2">2</option>
-                  <option value="1">1 Strongly Disagree</option>
-                </select>
-                <br><br>
-
-                <h4>Question 6</h4>
-                <label for="q6">I must go to Magic Kingdom when I visit Disney World</label>
-                <br>
-                <select required id="q6">
-                  <option value=" ">Select an option</option>
-                  <option value="5">5 Strongly Agree</option>
-                  <option value="4">4</option>
-                  <option value="3">3</option>
-                  <option value="2">2</option>
-                  <option value="1">1 Strongly Disagree</option>
-                </select>
-                <br><br>
-
-                <h4>Question 7</h4>
-                <label for="q7">I must take pictures with the characters</label>
-                <br>
-                <select required id="q7">
-                  <option value=" ">Select an option</option>
-                  <option value="5">5 Strongly Agree</option>
-                  <option value="4">4</option>
-                  <option value="3">3</option>
-                  <option value="2">2</option>
-                  <option value="1">1 Strongly Disagree</option>
-                </select>
-                <br><br>
-
-                <h4>Question 8</h4>
-                <label for="q8">I have patience to wait on the lines and don't need a "Fast Pass"</label>
-                <br>
-                <select required id="q8">
-                  <option value=" ">Select an option</option>
-                  <option value="5">5 Strongly Agree</option>
-                  <option value="4">4</option>
-                  <option value="3">3</option>
-                  <option value="2">2</option>
-                  <option value="1">1 Strongly Disagree</option>
-                </select>
-                <br><br>
-
-                <h4>Question 9</h4>
-                <label for="q9">The classic attractions like "It's a Small World" are my favorite </label>
-                <br>
-                <select required id="q9">
-                  <option value=" ">Select an option</option>
-                  <option value="5">5 Strongly Agree</option>
-                  <option value="4">4</option>
-                  <option value="3">3</option>
-                  <option value="2">2</option>
-                  <option value="1">1 Strongly Disagree</option>
-                </select>
-                <br><br>
-
-                <h4>Question 10</h4>
-                <label for="q10">Thriller attractions are the best!</label>
-                <br>
-                <select rquired id="q10">
-                  <option value=" ">Select an option</option>
-                  <option value="5">5 Strongly Agree</option>
-                  <option value="4">4</option>
-                  <option value="3">3</option>
-                  <option value="2">2</option>
-                  <option value="1">1 Strongly Disagree</option>
-                </select>
-                <br><br>
-
-              </div>
-              <button type="submit" class="btn btn-primary submit">Submit</button>
+                  <strong><label for="reserve-name">Question 2:</label></strong><br>
+                  <label for="reserve-name">Generally speaking, you rely more on your experience than your imagination.</label>
+                  <select class="form-control" id="q2">
+                      <option value=""></option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                      </select>
+                </div>
+                <div class="form-group">
+                    <strong><label for="reserve-name">Question 3:</label></strong><br>
+                    <label for="reserve-name">You find it easy to stay relaxed and focused even when there is some pressure.</label>
+                    <select class="form-control" id="q3">
+                        <option value=""></option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                  </div>
+                  <div class="form-group">
+                      <strong><label for="reserve-name">Question 4:</label></strong><br>
+                      <label for="reserve-name">You rarely do something just out of sheer curiosity.</label>
+                      <select class="form-control" id="q4">
+                          <option value=""></option>
+                          <option value="1">1 (Strongly Disagree)</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                    </div>
+                    <div class="form-group">
+                        <strong><label for="reserve-name">Question 5:</label></strong><br>
+                        <label for="reserve-name">People can rarely upset you.</label>
+                        <select class="form-control" id="q5">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                      </div>
+                      <div class="form-group">
+                          <strong><label for="reserve-name">Question 6:</label></strong><br>
+                          <label for="reserve-name">It is often difficult for you to relate to other people’s feelings.</label>
+                          <select class="form-control" id="q6">
+                              <option value=""></option>
+                              <option value="1">1 (Strongly Disagree)</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5 (Strongly Agree)</option>
+                              </select>
+                        </div>
+                        <div class="form-group">
+                            <strong><label for="reserve-name">Question 7:</label></strong><br>
+                            <label for="reserve-name">In a discussion, truth should be more important than people’s sensitivities.</label>
+                            <select class="form-control" id="q7">
+                                <option value=""></option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                          </div>
+                          <div class="form-group">
+                              <strong><label for="reserve-name">Question 8:</label></strong><br>
+                              <label for="reserve-name">You rarely get carried away by fantasies and ideas.</label>
+                              <select class="form-control" id="q8">
+                                  <option value=""></option>
+                                  <option value="1">1 (Strongly Disagree)</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5 (Strongly Agree)</option>
+                                  </select>
+                            </div>
+                            <div class="form-group">
+                                <strong><label for="reserve-name">Question 9:</label></strong><br>
+                                <label for="reserve-name">You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</label>
+                                <select class="form-control" id="q9">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                              </div>
+                              <div class="form-group">
+                                  <strong><label for="reserve-name">Question 10:</label></strong><br>
+                                  <label for="reserve-name">You feel more energetic after spending time with a group of people.</label>
+                                  <select class="form-control" id="q10">
+                                      <option value=""></option>
+                                      <option value="1">1 (Strongly Disagree)</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
+                                      <option value="5">5 (Strongly Agree)</option>
+                                      </select>
+                                </div>
+              <button type="submit" class="btn btn-primary submit" id="submit">Submit</button>
             </form>
           </div>
         </div>
@@ -206,126 +189,152 @@
     <footer class="footer">
       <div class="container">
         <p>
-          <a href="/api/friends">API Friends Link</a> |
+          <a href="api/friends">API Table Link</a> |
+          <a href="https://github.com/JoeCeran/FriendFinder">API Wait List</a>
       </div>
     </footer>
 
   </div>
 
-</body>
+   <!-- Modal -->
+   <div id="results-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
 
-<!-- Code to send to server -->
-<script type="text/javascript">
-  // code to execute when submit button clicked
-  $(".submit").on("click", function (event) {
-    event.preventDefault();
-    //  get the form elements
-    let newUser = {
-      userName: $("#user-name").val().trim(),
-      userPicture: $("#user-picture").val().trim(),
-      scores: []
-    };
-    let q1 = $("#q1").val();
-    let q2 = $("#q2").val();
-    let q3 = $("#q3").val();
-    let q4 = $("#q4").val();
-    let q5 = $("#q5").val();
-    let q6 = $("#q6").val();
-    let q7 = $("#q7").val();
-    let q8 = $("#q8").val();
-    let q9 = $("#q9").val();
-    let q10 = $("#q10").val();
-    //validate the form input
-    //all entries must have a value
-    if ((newUser.userName === "" || newUser.userName == " ") ||
-      (newUser.userPicture === "" || newUser.userPicture == " ") ||
-      q1 === "" || q1 == " " ||
-      q2 === "" || q2 == " " ||
-      q3 === "" || q3 == " " ||
-      q4 === "" || q4 == " " ||
-      q5 === "" || q5 == " " ||
-      q6 === "" || q6 == " " ||
-      q7 === "" || q7 == " " ||
-      q8 === "" || q8 == " " ||
-      q9 === "" || q9 == " " ||
-      q10 === "" || q10 == " ") {
-      alert("all fields are required");
-      return;
-    }
-    //check that picture link is a url
-    if (newUser.userPicture.substring(0, 4) !== "http") {
-      alert("picture link must be a url");
-      return;
-    }
-    //all survey questions answered - push question scores to new user score array
-    newUser.scores[0] = q1;
-    newUser.scores[1] = q2;
-    newUser.scores[2] = q3;
-    newUser.scores[3] = q4;
-    newUser.scores[4] = q5;
-    newUser.scores[5] = q6;
-    newUser.scores[6] = q7;
-    newUser.scores[7] = q8;
-    newUser.scores[8] = q9;
-    newUser.scores[9] = q10;
-    //call function to get a friend match
-    callApiFriends(newUser);
-  });
-  //this function is called to obtain the best match and display a modal of the match
-  function callApiFriends(newUser) {
-    //tell the server where to go to process request and on the callback display the modal (modal design is from bootstrap)
-    $.post("/api/friends", newUser,
-      function (data) {
-//clear the modal
-        $("#myModal").empty();
-        let myModal = $("#myModal");
-        let modelbox = $(
-          `<div id="myModal" role="dialog">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-body">
-                <h2>Best Match</h2> 
-                <br> 
-                <h4> ${data.name} </h4> 
-                <br> 
-                <img src=${data.photo}>
-              </div>
-              <div class="modal-footer">
-                <button type="button"  class="btn btn-default close" data-dismiss="modal">&times;</button>
-              </div>
-           </div>
-          </div>
-        </div>`);
-        myModal.modal().append(modelbox);
-        // Get the modal
-        let modal = document.getElementById('myModal');
-        // Get the <span> element that closes the modal
-        let btn = document.getElementsByClassName("close")[0];
-        // When the user clicks on <button (x), close the modal
-        btn.onclick = function () {
-          modal.style.display = "none";
-        }
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-          if (event.target == modal) {
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h2 class="modal-title"><strong>Best Match</strong></h2>
+        </div>
+        <div class="modal-body">
+          <h2 id="match-name"></h2>
+          <img id="match-img" src="./FriendFinder_files/3435aa3.jpg" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
+  <script type="text/javascript">
+    // code to execute when submit button clicked
+    $(".submit").on("click", function (event) {
+      event.preventDefault();
+      //  get the form elements
+      let newUser = {
+        userName: $("#user-name").val().trim(),
+        userPicture: $("#user-picture").val().trim(),
+        scores: []
+      };
+      let q1 = $("#q1").val();
+      let q2 = $("#q2").val();
+      let q3 = $("#q3").val();
+      let q4 = $("#q4").val();
+      let q5 = $("#q5").val();
+      let q6 = $("#q6").val();
+      let q7 = $("#q7").val();
+      let q8 = $("#q8").val();
+      let q9 = $("#q9").val();
+      let q10 = $("#q10").val();
+      //validate the form input
+      //all entries must have a value
+      if ((newUser.userName === "" || newUser.userName == " ") ||
+        (newUser.userPicture === "" || newUser.userPicture == " ") ||
+        q1 === "" || q1 == " " ||
+        q2 === "" || q2 == " " ||
+        q3 === "" || q3 == " " ||
+        q4 === "" || q4 == " " ||
+        q5 === "" || q5 == " " ||
+        q6 === "" || q6 == " " ||
+        q7 === "" || q7 == " " ||
+        q8 === "" || q8 == " " ||
+        q9 === "" || q9 == " " ||
+        q10 === "" || q10 == " ") {
+        alert("all fields are required");
+        return;
+      }
+      //check that picture link is a url
+      if (newUser.userPicture.substring(0, 4) !== "http") {
+        alert("picture link must be a url");
+        return;
+      }
+      //all survey questions answered - push question scores to new user score array
+      newUser.scores[0] = q1;
+      newUser.scores[1] = q2;
+      newUser.scores[2] = q3;
+      newUser.scores[3] = q4;
+      newUser.scores[4] = q5;
+      newUser.scores[5] = q6;
+      newUser.scores[6] = q7;
+      newUser.scores[7] = q8;
+      newUser.scores[8] = q9;
+      newUser.scores[9] = q10;
+      //call function to get a friend match
+      callApiFriends(newUser);
+    });
+    //this function is called to obtain the best match and display a modal of the match
+    function callApiFriends(newUser) {
+      //tell the server where to go to process request and on the callback display the modal (modal design is from bootstrap)
+      $.post("/api/friends", newUser,
+        function (data) {
+  //clear the modal
+          $("#myModal").empty();
+          let myModal = $("#myModal");
+          let modelbox = $(
+            `<div id="myModal" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <h2>Best Match</h2> 
+                  <br> 
+                  <h4> ${data.name} </h4> 
+                  <br> 
+                  <img src=${data.photo}>
+                </div>
+                <div class="modal-footer">
+                  <button type="button"  class="btn btn-default close" data-dismiss="modal">&times;</button>
+                </div>
+             </div>
+            </div>
+          </div>`);
+          myModal.modal().append(modelbox);
+          // Get the modal
+          let modal = document.getElementById('myModal');
+          // Get the <span> element that closes the modal
+          let btn = document.getElementsByClassName("close")[0];
+          // When the user clicks on <button (x), close the modal
+          btn.onclick = function () {
             modal.style.display = "none";
           }
-        }
-        // Clear the form when submitting
-        $("#user-name").val("");
-        $("#user-picture").val("");
-        $("#q1").val("");
-        $("#q2").val("");
-        $("#q3").val("");
-        $("#q4").val("");
-        $("#q5").val("");
-        $("#q6").val("");
-        $("#q7").val("");
-        $("#q8").val("");
-        $("#q9").val("");
-        $("#q10").val("");
-      });
-  };
-</script>
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function (event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+          // Clear the form when submitting
+          $("#user-name").val("");
+          $("#user-picture").val("");
+          $("#q1").val("");
+          $("#q2").val("");
+          $("#q3").val("");
+          $("#q4").val("");
+          $("#q5").val("");
+          $("#q6").val("");
+          $("#q7").val("");
+          $("#q8").val("");
+          $("#q9").val("");
+          $("#q10").val("");
+        });
+    };
+  </script>
+
+</body>
 
 </html>
+
+
+
