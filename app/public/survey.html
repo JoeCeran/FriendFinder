@@ -172,7 +172,7 @@
                                   <option value="5">5 (Strongly Agree)</option>
                                   </select>
                             </div>
-            <button type="button" id="submitBtn" class="btn btn-large btn-primary">Submit</button>
+            <button type="button" id="submit" class="btn btn-large btn-primary">Submit</button>
         </div>
       </div>
       </div>
@@ -204,18 +204,44 @@
             </div>
           </div>
 
-        <script type="text/javascript">
-        $('#responseModal').modal({ show: false})
-            $("#submitBtn").on("click", function(event){
-                function validateForm() {
-                let isValid = true;
-                if ($("#name").val() == "" || $("#photo").val() == "") {
-                    alert("Please enter a valid name and image")
-                    isValid = false
-                }
-                console.log(isValid);
-                return isValid;
+          <script type="text/javascript">
+            // Chosen CSS
+
+            var config = {
+              ".chosen-select": {},
+              ".chosen-select-deselect": {
+                allow_single_deselect: true
+              },
+              ".chosen-select-no-single": {
+                disable_search_threshold: 10
+              },
+              ".chosen-select-no-results": {
+                no_results_text: "Oops, nothing found!"
+              },
+              ".chosen-select-width": {
+                width: "95%"
+              }
+            };
+        
+            for (var selector in config) {
+              $(selector).chosen(config[selector]);
             }
+            
+            $('#responseModal').modal({ show: false})
+            // Capture the form inputs
+            $("#submit").on("click", function(event) {
+              event.preventDefault();
+        
+              // Form validation
+              function validateForm() {
+                var isValid = true;
+                $(".form-control").each(function() {
+                  if ($(this).val() === "") {
+                    isValid = false;
+                  }
+                });
+                return isValid;
+              }
             if (validateForm()) {
                 let name = $("#name").val().trim();
                 let image = $("#photo").val().trim();
