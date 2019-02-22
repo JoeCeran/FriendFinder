@@ -1,13 +1,11 @@
 // ==============================================================================
 // DEPENDENCIES
-// Series of npm packages that we will use to give our server useful functionality
 // ==============================================================================
 
 let express = require("express");
 
 // ==============================================================================
 // EXPRESS CONFIGURATION
-// This sets up the basic properties for our express server
 // ==============================================================================
 
 // Tells node that we are creating an "express" server
@@ -22,7 +20,6 @@ app.use(express.json());
 app.use(express.static("app/public"));
 // ================================================================================
 // ROUTER
-// The below points our server to a series of "route" files.
 // ================================================================================
 
 require("./app/routes/apiRoutes")(app);
@@ -30,7 +27,6 @@ require("./app/routes/htmlRoutes")(app);
 
 // =============================================================================
 // LISTENER
-// The below code "starts" our server
 // =============================================================================
 
 app.listen(PORT, function() {
