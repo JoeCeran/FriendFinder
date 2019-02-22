@@ -21,13 +21,6 @@
       <h1 class="text-center">
         <span class="fa fa-fire"></span> Friend Finder </h1>
       <hr>
-      <br>
-      <div class="text-center">
-        <a href="/tables">
-        </a>
-        <a href="/">
-          </button>
-        </a>
       </div>
     </div>
     <div class="row">
@@ -197,70 +190,112 @@
 
   </div>
 
-  <div class="modal" tabindex="-1" role="dialog" id="responseModal">
-    <div class="modal-dialog" role="document">
+   <!-- Modal -->
+   <div id="results-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Success! You have been matched with <span id="responseName"></span></h5>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h2 class="modal-title"><strong>Best Match</strong></h2>
         </div>
         <div class="modal-body">
-          <img id ="responseImg">
+          <h2 id="match-name"></h2>
+          <img id="match-img" src="./FriendFinder_files/3435aa3.jpg" alt="">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
+
     </div>
   </div>
+
+  <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
-$('#responseModal').modal({ show: false})
-    $("#submitBtn").on("click", function(event){
-        function validateForm() {
-        let isValid = true;
-        if ($("#name").val() == "" || $("#photo").val() == "") {
-            alert("Please enter a valid name and image")
-            isValid = false
-        }
-        for (let i = 1; i < 11; i++) {
-            if ($('input[name="q' + i + 'radios"]:checked').length == 0) {
-            isValid = false;
-            alert("Please fill out all survery questions");
-            break;
-            }
-        }
-        console.log(isValid);
-        return isValid;
-    }
-    if (validateForm()) {
-        let name = $("#name").val().trim();
-        let image = $("#photo").val().trim();
-        let q1 = $("input[name='q1radios']:checked").val();
-        let q2 = $("input[name='q2radios']:checked").val();
-        let q3 = $("input[name='q3radios']:checked").val();
-        let q4 = $("input[name='q4radios']:checked").val();
-        let q5 = $("input[name='q5radios']:checked").val();
-        let q6 = $("input[name='q6radios']:checked").val();
-        let q7 = $("input[name='q7radios']:checked").val();
-        let q8 = $("input[name='q8radios']:checked").val();
-        let q9 = $("input[name='q9radios']:checked").val();
-        let q10 = $("input[name='q10radios']:checked").val();
-        let user = {
+ 
+  var config = {
+       ".chosen-select": {},
+       ".chosen-select-deselect": {
+         allow_single_deselect: true
+       },
+       ".chosen-select-no-single": {
+         disable_search_threshold: 10
+       },
+       ".chosen-select-no-results": {
+         no_results_text: "Oops, nothing found!"
+       },
+       ".chosen-select-width": {
+         width: "95%"
+       }
+     };
+ 
+     for (var selector in config) {
+       $(selector).chosen(config[selector]);
+     }
+ 
+   // Capture the form inputs
+   $("#submit").on("click", function(event) {
+     event.preventDefault();
+ 
+     // Form validation
+     function validateForm() {
+       var isValid = true;
+       $(".form-control").each(function() {
+         if ($(this).val() === "") {
+           isValid = false;
+         }
+       });
+ 
+       $(".chosen-select").each(function() {
+ 
+         if ($(this).val() === "") {
+           isValid = false;
+         }
+       });
+       return isValid;
+     }
+ 
+     // If all required fields are filled
+     if (validateForm()) {
+      var name = $("#name").val();
+      var photo = $("#photo").val();
+      var q1 = $("#question1").val();
+      var q2 = $("#question2").val();
+      var q3 = $("#question3").val();
+      var q4 = $("#question4").val();
+      var q5 = $("#question5").val();
+      var q6 = $("#question6").val();
+      var q7 = $("#question7").val();
+      var q8 = $("#question8").val();
+      var q9 = $("#question9").val();
+      var q10 = $("#question10").val();
+       // Create an object for the user"s data
+       var userData = {
             name: name,
             photo: image,
             scores: [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
-        }
-        $.post("/api/friends", user, function(response){
-            console.log(response)
-            $("#responseName").html(response.name);
-            $("#responseImg").attr("src", response.photo);
-            $("#responseImg").height("254");
-            $("#responseImg").width("350");
-            $("#responseModal").modal("show");
-            $("#submitBtn").attr('disabled', 'disabled');
-        })
-    }
-    })
-</script>
+       };
+       // AJAX post the data to the friends API.
+       $.post("/api/friends", userData, function(data) {
+        console.log(response)
+ 
+         // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+
+         $("#match-name").text(data.name);
+         $("#match-img").attr("src", data.photo);
+ 
+         // Show the modal with the best match
+         $("#results-modal").modal("toggle");
+         $("#submit").attr('disabled', 'disabled');
+ 
+       });
+     } else {
+       alert("Please fill out all fields before submitting!");
+     }
+   });
+ </script>
 
 </body>
 
