@@ -30,7 +30,7 @@ app.use(express.static("app/public"));
 // ================================================================================
 
 require("./app/routing/apiRoutes")(app);
-require("./app/routing/htmlRoutes")(app);
+require("./routing/htmlRoutes")(app);
 
 // =============================================================================
 // LISTENER
