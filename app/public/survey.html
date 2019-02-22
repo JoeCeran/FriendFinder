@@ -55,7 +55,7 @@
                 <div class="form-group">
                     <strong><label for="reserve-name">Question 1:</label></strong><br>
                     <label for="reserve-name">Your mind is always buzzing with unexplored ideas and plans.</label>
-                    <select class="form-control" id="q1">
+                    <select class="form-control" id="question1">
                         <option value=""></option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -205,27 +205,6 @@
           </div>
 
           <script type="text/javascript">
-            // Chosen CSS
-
-            var config = {
-              ".chosen-select": {},
-              ".chosen-select-deselect": {
-                allow_single_deselect: true
-              },
-              ".chosen-select-no-single": {
-                disable_search_threshold: 10
-              },
-              ".chosen-select-no-results": {
-                no_results_text: "Oops, nothing found!"
-              },
-              ".chosen-select-width": {
-                width: "95%"
-              }
-            };
-        
-            for (var selector in config) {
-              $(selector).chosen(config[selector]);
-            }
             
             $('#responseModal').modal({ show: false})
             // Capture the form inputs
@@ -245,16 +224,16 @@
             if (validateForm()) {
                 let name = $("#name").val().trim();
                 let image = $("#photo").val().trim();
-                let q1 = $("#q1").val();
-                let q2 = $("#qeustion2").val();
-                let q3 = $("#qeustion3").val();
-                let q4 = $("#qeustion4").val();
-                let q5 = $("#qeustion5").val();
-                let q6 = $("#qeustion6").val();
-                let q7 = $("#qeustion7").val();
-                let q8 = $("#qeustion8").val();
-                let q9 = $("#qeustion9").val();
-                let q10 = $("#qeustion10").val();
+                let q1 = $("#question1").val();
+                let q2 = $("#question2").val();
+                let q3 = $("#question3").val();
+                let q4 = $("#question4").val();
+                let q5 = $("#question5").val();
+                let q6 = $("#question6").val();
+                let q7 = $("#question7").val();
+                let q8 = $("#question8").val();
+                let q9 = $("#question9").val();
+                let q10 = $("#question10").val();
                 let user = {
                     name: name,
                     photo: image,
