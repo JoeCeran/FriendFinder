@@ -52,27 +52,18 @@
                 </div>
                 <div class="card-body">
             <form role="form">
-            <h5><strong>You enjoy watching Netflix on a rainy day.</strong></h5>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="q1radios" id="inlineRadio1" value="1">
-                <label class="form-check-label" for="inlineRadio1">1(Strongly Disagree)</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="q1radios" id="inlineRadio2" value="2">
-                <label class="form-check-label" for="inlineRadio2">2</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="q1radios" id="inlineRadio3" value="3">
-                <label class="form-check-label" for="inlineRadio3">3</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="q1radios" id="inlineRadio4" value="4">
-                <label class="form-check-label" for="inlineRadio4">4</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="q1radios" id="inlineRadio5" value="5">
-                <label class="form-check-label" for="inlineRadio5">5 (Strongly Agree)</label>
-            </div>
+                <div class="form-group">
+                    <strong><label for="reserve-name">Question 1:</label></strong><br>
+                    <label for="reserve-name">Your mind is always buzzing with unexplored ideas and plans.</label>
+                    <select class="form-control" id="q1">
+                        <option value=""></option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                  </div>
             <br><br>
             <h5><strong>You enjoy spirited debate.</strong></h5>
             <div class="form-check form-check-inline">
@@ -277,6 +268,17 @@
       </div>
       </div>
       </div>
+
+      <br>
+
+      <footer class="footer">
+          <div class="container">
+            <p>
+              <a href="api/friends">API Table Link</a> |
+              <a href="https://github.com/JoeCeran/FriendFinder">API Wait List</a>
+          </div>
+        </footer>
+
         <div class="modal" tabindex="-1" role="dialog" id="responseModal">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -292,6 +294,7 @@
               </div>
             </div>
           </div>
+
         <script type="text/javascript">
         $('#responseModal').modal({ show: false})
             $("#submitBtn").on("click", function(event){
@@ -314,7 +317,7 @@
             if (validateForm()) {
                 let name = $("#name").val().trim();
                 let image = $("#photo").val().trim();
-                let q1 = $("input[name='q1radios']:checked").val();
+                let q1 = $("#q1").val();
                 let q2 = $("input[name='q2radios']:checked").val();
                 let q3 = $("input[name='q3radios']:checked").val();
                 let q4 = $("input[name='q4radios']:checked").val();
