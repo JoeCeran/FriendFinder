@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Survery Page</title>
-
-  <!-- Latest compiled and minified CSS & JS -->
+ 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
@@ -35,7 +34,7 @@
                 </div>
                 <div class="card-body">
                     <form role="form">
-                      <div class="form-group">
+                      <div class="form-group">                                                     
                         <strong><label for="reserve-name">Name (Required)</label></strong>
                         <input type="text" id="name" class="form-control" required="">
                       </div>
@@ -195,10 +194,10 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Success! You have been matched with <span id="responseName"></span></h5>
+                  <h5 class="modal-title">Your match is... <span id="responseName"></span></h5>
                 </div>
                 <div class="modal-body">
-                  <img id ="responseImg">
+                  <img id ="matchImg">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -209,7 +208,7 @@
 
           <script type="text/javascript">
             
-            $('#responseModal').modal({ show: false})
+            $('#showModal').modal({ show: false})
             // Capture the form inputs
             $("#submit").on("click", function(event) {
               event.preventDefault();
@@ -244,11 +243,11 @@
                 }
                 $.post("/api/friends", user, function(response){
                     $("#responseName").html(response.name);
-                    $("#responseImg").attr("src", response.photo);
-                    $("#responseImg").height("200");
-                    $("#responseImg").width("300");
-                    $("#responseModal").modal("show");
-                    $("#submitBtn").attr('disabled', 'disabled');
+                    $("#matchImg").attr("src", response.photo);
+                    $("#matchImg").height("200");
+                    $("#matchImg").width("300");
+                    $("#showModal").modal("show");
+                    $("#submit").attr('disabled', 'disabled');
                 })
             }
             })
