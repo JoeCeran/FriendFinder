@@ -2,7 +2,7 @@
 // LOAD DATA
 // ===============================================================================
 
-let friends = require("../data/friends");
+let friends = require("../data/friendsData");
 
 
 // ===============================================================================
@@ -21,7 +21,7 @@ module.exports = function (app) {
       name: "",
       photo: ""
     }
-    
+
     var saveScore = 0;
     for (var i = 0; i < friends.length; i++) {
 
