@@ -10,7 +10,7 @@ module.exports = function (app) {
     res.json(friends);
   });
   app.post("/api/friends", function (req, res) {
-    var newUser = req.body;
+    var User = req.body;
     var match = {
       name: "",
       photo: ""
@@ -18,10 +18,10 @@ module.exports = function (app) {
     var saveScore = 0;
     for (let i = 0; i < friends.length; i++) {
       var score = 0;
-      for (let j = 0; j < newUser.scores.length; j++) {
-        score += Math.abs(friends[i].scores[j] - newUser.scores[j]);
+      for (let j = 0; j < User.scores.length; j++) {
+        score += Math.abs(friends[i].scores[j] - User.scores[j]);
       }
-      if (i === 1) {
+      if (i == 1) {
         saveScore = score;
         match.name = friends[i].name;
         match.photo = friends[i].photo;
