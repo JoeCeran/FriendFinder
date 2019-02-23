@@ -194,10 +194,10 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Your match is... <span id="responseName"></span></h5>
+                  <h5 class="modal-title"> <span id="responseName"></span></h5>
                 </div>
                 <div class="modal-body">
-                  <img id ="matchImg">
+                  <img id ="responseImg">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -208,7 +208,7 @@
 
           <script type="text/javascript">
             
-            $('#showModal').modal({ show: false})
+            $('#responseModal').modal({ show: false})
             // Capture the form inputs
             $("#submit").on("click", function(event) {
               event.preventDefault();
@@ -243,11 +243,11 @@
                 }
                 $.post("/api/friends", user, function(response){
                     $("#responseName").html(response.name);
-                    $("#matchImg").attr("src", response.photo);
-                    $("#matchImg").height("200");
-                    $("#matchImg").width("300");
-                    $("#showModal").modal("show");
-                    $("#submit").attr('disabled', 'disabled');
+                    $("#responseImg").attr("src", response.photo);
+                    $("#responseImg").height("200");
+                    $("#responseImg").width("300");
+                    $("#responseModal").modal("show");
+                    $("#submitBtn").attr('disabled', 'disabled');
                 })
             }
             })
