@@ -25,21 +25,21 @@ module.exports = function (app) {
     var saveScore = 0;
     for (let i = 0; i < friends.length; i++) {
 
-      var questionScore = 0;
+      var score = 0;
 
       for (let j = 0; j < newUser.scores.length; j++) {
-        questionScore += Math.abs(friends[i].scores[j] - newUser.scores[j]);
+        score += Math.abs(friends[i].scores[j] - newUser.scores[j]);
       }
 
       if (i === 1) {
-        saveScore = questionScore;
+        saveScore = score;
         match.name = friends[i].name;
         match.photo = friends[i].photo;
       }
 
       else {
-        if (questionScore <= saveScore) {
-          saveScore = questionScore;
+        if (score <= saveScore) {
+          saveScore = score;
           match.name = friends[i].name;
           match.photo = friends[i].photo;
         };
