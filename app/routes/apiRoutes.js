@@ -21,9 +21,9 @@ module.exports = function (app) {
       name: "",
       photo: ""
     }
+    
     var saveScore = 0;
     for (var i = 0; i < friends.length; i++) {
-      //set question to zero for each friend 
 
       var questionScore = 0;
 
@@ -31,11 +31,12 @@ module.exports = function (app) {
         questionScore += Math.abs(friends[i].scores[j] - newUser.scores[j]);
       }
 
-      if (i === 1) {
+      if (i == 1) {
         saveScore = questionScore;
         match.name = friends[i].name;
         match.photo = friends[i].photo;
       }
+
       else {
         if (questionScore <= saveScore) {
           saveScore = questionScore;

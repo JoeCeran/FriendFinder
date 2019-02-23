@@ -215,7 +215,7 @@
               event.preventDefault();
         
               // Form validation
-              function validateForm() {
+              function form() {
                 var isValid = true;
                 $(".form-control").each(function() {
                   if ($(this).val() === "") {
@@ -224,7 +224,7 @@
                 });
                 return isValid;
               }
-            if (validateForm()) {
+            if (form()) {
                 let name = $("#name").val().trim();
                 let photo = $("#photo").val().trim();
                 let q1 = $("#question1").val();
