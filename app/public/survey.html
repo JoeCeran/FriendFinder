@@ -226,7 +226,7 @@
               }
             if (validateForm()) {
                 let name = $("#name").val().trim();
-                let image = $("#photo").val().trim();
+                let photo = $("#photo").val().trim();
                 let q1 = $("#question1").val();
                 let q2 = $("#question2").val();
                 let q3 = $("#question3").val();
@@ -239,14 +239,14 @@
                 let q10 = $("#question10").val();
                 let user = {
                     name: name,
-                    photo: image,
+                    photo: photo,
                     scores: [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
                 }
                 $.post("/api/friends", user, function(response){
                     $("#responseName").html(response.name);
                     $("#responseImg").attr("src", response.photo);
-                    $("#responseImg").height("254");
-                    $("#responseImg").width("350");
+                    $("#responseImg").height("200");
+                    $("#responseImg").width("300");
                     $("#responseModal").modal("show");
                     $("#submitBtn").attr('disabled', 'disabled');
                 })
