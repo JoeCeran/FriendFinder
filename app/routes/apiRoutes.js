@@ -12,14 +12,14 @@ module.exports = function (app) {
   app.post("/api/friends", function (req, res) {
     var saveScore;
     var score = 0;
-    var User = req.body;
+    var user = req.body;
     var match = {
       name: "",
       photo: ""
     }
     for (let i = 0; i < friends.length; i++) {
-      for (let j = 0; j < User.scores.length; j++) {
-        score += Math.abs(friends[i].scores[j] - User.scores[j]);
+      for (let j = 0; j < user.scores.length; j++) {
+        score += Math.abs(friends[i].scores[j] - user.scores[j]);
       }
       if (i == 1) {
         saveScore = score;
