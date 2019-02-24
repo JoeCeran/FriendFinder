@@ -11,15 +11,13 @@ module.exports = function (app) {
   });
   app.post("/api/friends", function (req, res) {
     var saveScore;
+    var score = 0;
     var User = req.body;
     var match = {
       name: "",
       photo: ""
     }
-
-    
     for (let i = 0; i < friends.length; i++) {
-      var score = 0;
       for (let j = 0; j < User.scores.length; j++) {
         score += Math.abs(friends[i].scores[j] - User.scores[j]);
       }
