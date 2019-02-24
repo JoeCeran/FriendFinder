@@ -10,12 +10,14 @@ module.exports = function (app) {
     res.json(friends);
   });
   app.post("/api/friends", function (req, res) {
+    var saveScore;
     var User = req.body;
     var match = {
       name: "",
       photo: ""
     }
-    var saveScore = 0;
+
+    
     for (let i = 0; i < friends.length; i++) {
       var score = 0;
       for (let j = 0; j < User.scores.length; j++) {
