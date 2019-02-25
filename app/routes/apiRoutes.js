@@ -21,18 +21,11 @@ module.exports = function (app) {
       for (let x = 0; x < user.scores.length; x++) {
         score += Math.abs(friends[i].scores[x] - user.scores[x]);
       }
-      if (i == 1) {
+      if (i == 1 || score <= Scored) {
         Scored = score;
         match.name = friends[i].name;
         match.photo = friends[i].photo;
       }
-      else {
-        if (score <= Scored) {
-          Scored = score;
-          match.name = friends[i].name;
-          match.photo = friends[i].photo;
-        };
-      };
     };
     res.json(match);
   });
